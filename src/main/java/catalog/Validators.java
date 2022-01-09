@@ -33,13 +33,6 @@ public class Validators {
             throw new IllegalArgumentException("Page number must be positive");
         }
     }
-
-    public static void checkTheCriteria(SearchCriteria searchCriteria) {
-        if (!searchCriteria.hasContributor() && !searchCriteria.hasTitle()){
-            throw new IllegalArgumentException("InvalidSerach");
-        }
-    }
-
     public static void validateAudioFeatures(String title, int length, List<String> composer) {
         if (length<0){
             throw new IllegalArgumentException("length must be positive");
