@@ -48,7 +48,8 @@ public class Catalog {
     }
 
 
-    public List<CatalogItem> findByCriteria(SearchCriteria searchCriteria) {
+
+        public List<CatalogItem> findByCriteria(SearchCriteria searchCriteria) {
 
         switch (searchCriteria.getSearchMethod()) {
             case 2:
@@ -61,6 +62,19 @@ public class Catalog {
                 throw new IllegalArgumentException("searchCriteria is not working");
         }
     }
+//    Using simple logic.
+//    public List<CatalogItem> findByCriteria(SearchCriteria s) {
+//        List<CatalogItem> result = new ArrayList<>();
+//        for (CatalogItem c : catalogItems) {
+//            if ((!s.hasContributor() && c.getTitles().contains(s.getTitle())
+//                    || (!s.hasTitle() && c.getContributors().contains(s.getContributor())))
+//                    || (s.hasTitle() && c.getTitles().contains(s.getTitle()) &&
+//                    (s.hasContributor() && c.getContributors().contains(s.getContributor())))){
+//                result.add(c);
+//            }
+//        }
+//        return result;
+//    }
 
     private List<CatalogItem> findByBoth(SearchCriteria searchCriteria) {
         List<CatalogItem> result = new ArrayList<>();
